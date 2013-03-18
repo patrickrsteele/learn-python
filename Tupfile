@@ -1,0 +1,1 @@
+: doc/guide.pdf |> git archive --format zip --output "guide.zip" master; zip guide.zip doc/guide.pdf |> guide.zip
