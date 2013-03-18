@@ -1,0 +1,3 @@
+: foreach *.svg |> inkscape -f %f --export-eps %B.eps |> %B.eps
+
+.gitignore

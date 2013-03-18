@@ -1,0 +1,7 @@
+: guide.tex | ../results/*.out img/*.eps |> latex %f; latex %f; latex %f |> %B.dvi | %B.aux %B.log %B.toc {latex-out}
+
+: {latex-out} |> dvips guide.dvi |> guide.ps
+
+: guide.ps |> ps2pdf guide.ps |> guide.pdf
+
+.gitignore

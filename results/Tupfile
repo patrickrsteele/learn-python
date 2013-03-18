@@ -1,0 +1,18 @@
+EXAMPLES = ../examples/flow-test-bad.py\
+           ../examples/for-for.py \
+           ../examples/for-while.py \
+           ../examples/hello.py \
+           ../examples/while.py \
+           ../examples/tax.py \
+           ../examples/greeting.py \
+           ../examples/greeting-return.py
+
+: ../examples/positive.py |> echo "7" | python %f > %o |> positive-pos.out
+
+: ../examples/positive.py |> echo "-7" | python %f > %o |> positive-neg.out
+
+: ../projects/functions/test.py | ../projects/functions/functions-1.py |> true `python %f &> %o` |> functions-test.out
+
+: foreach $(EXAMPLES) |> python %f > %B.out |> %B.out
+
+.gitignore
